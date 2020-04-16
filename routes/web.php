@@ -25,3 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'BlogController@index')->name('index');
 Route::get('/sobre', 'BlogController@sobre')->name('sobre');
 Route::get('/busca/{texto?}', 'BlogController@busca')->name('busca');
+
+Route::get('/post/cria', 'BlogController@criapost')->name('criapost');
+
+//Só aceitamos post que deve vir de um formulário
+Route::post('/post/salva', 'BlogController@salvapost')->name('salvapost');

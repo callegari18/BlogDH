@@ -14,13 +14,10 @@ Home seja bem vindo !
             <div class="card-body">
                 <h1>categorias</h1>
                 <p>
-                    <a href="#">Programação</a>,
-                    <a href="#">Infra</a>,
-                    <a href="#">Redes</a>,
-                    <a href="#">Devops</a>,
-                    <a href="#">Frontend</a>,
-                    <a href="#">Backend</a>
-                </p>
+                    @foreach ($categorias as $categoria)
+                        <a href="?categoria_id={{$categoria->id}}">{{$categoria->nome}}</a>,
+                    @endforeach
+                                    </p>
             </div>
         </div>
     </div>
@@ -28,7 +25,7 @@ Home seja bem vindo !
     <div class="col-12 col-sm-8">
         @foreach ($postagens as $post)
             <h3>{{$post->titulo}}</h3>
-            <p>{{$post->resumo}}}</p>            
+            <p>{{$post->resumo}}</p>
         @endforeach
     </div>
 
